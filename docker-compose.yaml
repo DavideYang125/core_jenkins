@@ -7,6 +7,9 @@ services:
     ports:
       - "8080:8080"
       - "50000:50000"
+    dns:
+      - 114.114.114.114
+      - 8.8.8.8    
     restart: always
     user: root
     volumes:
@@ -16,3 +19,4 @@ services:
       - '/usr/local/bin/docker-compose:/usr/local/bin/docker-compose'
     environment:
       - TZ=Asia/Shanghai
+    #network_mode: "host"
